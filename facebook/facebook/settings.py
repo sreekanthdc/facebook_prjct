@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'facebook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydb',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'facebookdb',
 	    'USER': 'root',
 	    'PASSWORD': '1234',
     }

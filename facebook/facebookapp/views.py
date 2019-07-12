@@ -12,11 +12,11 @@ def myIndex(request):
     return HttpResponse(template.render(context, request))
 
 
-def home(request):
-    print("get into index")
-    template = loader.get_template('home.html')
-    context = {"message": "welcome this is my first django application"}
-    return HttpResponse(template.render(context, request))
+#def home(request):
+#    print("get into index")
+#    template = loader.get_template('home.html')
+#    context = {"message": "welcome this is my first django application"}
+#    return HttpResponse(template.render(context, request))
 
 
 def checklogin(request):

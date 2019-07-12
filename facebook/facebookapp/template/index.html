@@ -15,7 +15,7 @@
                 if (username.value.trim() == "" || password.value.trim() == "") {
                     alert("username or password is blank");
                     return false;
-                } else if (password.value.trim().length<4) {
+                } else if (password.value.trim().length<8) {
                     alert("password too short");
                     return false;
                 } else {
@@ -30,7 +30,7 @@
         <div class="col-lg-6 col-md-1 "><img src="{% static 'img/facebook.png' %}" class="mn-lg"></div>
         <div class="sgn-in col-lg-6 d-none d-md-none d-lg-block">
 
-            <form class="form-inline pt-4" onsubmit="return validation()" action="/facebookapp/login/" method="POST">
+            <form class="form-inline pt-4" onsubmit="return validation()" action="/facebook/login/" method="POST">
                 {% csrf_token %}
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="staticEmail2" class="sr-only">Email</label>
