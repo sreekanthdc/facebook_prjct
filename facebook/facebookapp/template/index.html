@@ -22,6 +22,31 @@
                     true;
                 }
             }
+
+        function regvalidation() {
+            var firstname = document.getElementById("firstname");
+            var surename = document.getElementById("surename");
+            var email = document.getElementById("email");
+            var remail = document.getElementById("remail");
+            var rpassword = document.getElementById("rpassword");
+
+            if (firstname.value.trim() == ""){
+                document.getElementById('firstname').style.borderColor = "red";
+                return false;
+            }else if(surename.value.trim() == ""){
+                document.getElementById('surename').style.borderColor = "red";
+                return false;
+            }else if(email.value.trim() == ""){
+                document.getElementById('email').style.borderColor = "red";
+                return false;
+            }else if(remail.value.trim() == ""){
+                document.getElementById('remail').style.borderColor = "red";
+                return false;
+            }else if(rpassword.value.trim() == ""){
+                document.getElementById('rpassword').style.borderColor = "red";
+                return false;
+            }
+        }
     </script>
     </head>
 
@@ -64,60 +89,31 @@
         </div>
         <div class="col-lg-6 float-left d-none d-md-none d-lg-block "><img src="{% static 'img/Untitled-2.jpg' %}" class="img-fluid "></div>
         <div class="frm col-lg-6 float-right pt-4 d-none d-md-none d-lg-block">
+        <form class="" onsubmit="return regvalidation()" action="/facebook/register/" method="POST">
+            {% csrf_token %}
             <h3>Create an ccount </h3>
             <h5 class="margin-bottom">it's free and always will be</h5>
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Surename">
+            <input type="text" placeholder="First name" id="firstname" name="firstName">
+            <input type="text" placeholder="Surename" id="surename" name="sureName">
             <br>
-            <input type="text" name="Email or mobile number" class="in-wd margin-top" placeholder="Email or mobile numer">
+            <input type="text"  class="in-wd margin-top" placeholder="Email or mobile numer" id="email" name="email">
             <br>
-            <input type="text" name="Email or mobile number" class="in-wd margin-top" placeholder="Re-enter Email or mobile numer">
+            <input type="text"  class="in-wd margin-top" placeholder="Re-enter Email or mobile numer" id="remail">
             <br>
-            <input type="password" name="password" placeholder="New password" class="margin-top in-wd">
+            <input type="password"  placeholder="New password" class="margin-top in-wd" id="rpassword" name="rpassword">
             <br>
             <h3 class="margin-top">Birthday</h3>
             <br>
-            <select class="courses" value="day">
-                <option value="0">Day</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </select>
-            <select class="courses" value="month">
-                <option value="0">Month</option>
-                <option value="Jan">Jan</option>
-                <option value="Feb">Feb</option>
-                <option value="Mar">Mar</option>
-                <option value="Apr">Apr</option>
-                <option value="May">May</option>
-                <option value="Jun">Jun</option>
-                <option value="July">July</option>
-                <option value="Aug">Aug</option>
-            </select>
-            <select class="courses" value="year">
-                <option value="0">Year</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-            </select>
+            <input type="date" id="date" name="date">
             <span>Why do i need to provide my date of birth</span>
             <br>
             <input type="radio" name="gender" value="MALE" id="gender_MALE" class="margin-top"><span class="message">Male</span>
             <input type="radio" name="gender" value="FEMALE" id="gender_FEMALE" class="gen1"><span class="message ">Female</span>
             <p class="para margin-top">By clicking create an account, you agree to our <span class="blue">Terms</span> and that<br> you have read our <span class="blue">Data Policy</span>, Including our <span class="blue">cookie use</span></p>
-            <input type="button" value="Create an account" class="cr-btn">
+            <input type="submit" value="Create an account" class="cr-btn">
             <hr class="margin-top">
             <h6 class="h-clr"><span>Create a page</span> for celevrety, band or business.</h6>
+        </form>
         </div>
     </div>
     <div class="footer text-center">
