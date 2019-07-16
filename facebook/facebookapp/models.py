@@ -13,3 +13,8 @@ class UserDetails(models.Model):
     gender = models.CharField(max_length=10)
     dob = models.CharField(max_length=10)
     fklogin = models.ForeignKey(UserData, on_delete=models.CASCADE)
+
+
+class Upload(models.Model):
+    name = models.CharField(max_length=100)
+    upPicture = models.FileField(upload_to='pictures/')

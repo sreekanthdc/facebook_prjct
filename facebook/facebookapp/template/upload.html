@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>Upload File</title>
+    </head>
+    <body>
+        <form name="frm_upload" action="/facebookapp/upload/" method="POST" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <label>Name: </label>
+            <input type="text" name="txt_name"><br>
+            <input type="file" name="file_upload"><br>
+            <input type="submit" name="">
+        </form>
+        <img src="{{img.url}}" width="350px" height="180px">
+    </body>
+
+
+</html>

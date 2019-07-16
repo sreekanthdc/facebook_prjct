@@ -63,3 +63,22 @@ def userRegistration(request):
     except Exception as r:
         print(r)
     return HttpResponse(template.render(context,request))
+
+
+#file Upload
+
+def fileUpload(request):
+    template = loader.get_template('upload.html')
+    context = {}
+    print("opload get")
+    if request.method == 'POST' and request.FILES['file_upload']:
+        print("upload post")
+        myfile = request.FILES['file_upload']
+        fname = request.POST.get('txt_name')
+        objUpload = Upload(name = fname, upPicture = myfile)
+        print(objUpload)
+        context['msg'] = 'File Uploaded Succesfully'
+        context ['img'] = objUpload.upPicture
+        objUpload.save()
+    return HttpResponse(template.render(context, request))
+
