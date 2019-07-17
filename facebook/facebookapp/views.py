@@ -2,6 +2,11 @@
 from django.http import HttpResponse
 from django.template import loader
 from . models import *
+# api data information 
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+import json
 # Create your views here.apt
 
 
@@ -34,6 +39,7 @@ def checklogin(request):
     except Exception as e:
         print(e)
     return HttpResponse(template.render(context, request))
+
 
 
 def userRegistration(request):
@@ -82,3 +88,28 @@ def fileUpload(request):
         objUpload.save()
     return HttpResponse(template.render(context, request))
 
+
+@api_view(['POST'])
+def addData(request):
+    mydata = request.data
+    print(mydata)
+    myobj = Product_tbl(name=mydata['pname'])
+    myobj.save()
+    return Response("product added successfully")
+
+
+@api_view(['POST'])
+def viewProduct(request):
+    Userdata = request.data
+    name = Userdata['letter']
+    obj = Product_tbl.objects.filter(name_istartswith=name).exists()
+    if obj :
+        product_obj = Product_tbl.objects.filter(name_istartswith=name)
+        data_list = []
+        for obj in product_obj:
+            data_list.append(obj.name)
+        
+    else:
+        return Response ("No matching data")
+    
+    return Response(data_list)

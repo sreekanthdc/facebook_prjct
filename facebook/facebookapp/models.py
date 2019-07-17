@@ -18,3 +18,7 @@ class UserDetails(models.Model):
 class Upload(models.Model):
     name = models.CharField(max_length=100)
     upPicture = models.FileField(upload_to='pictures/')
+
+
+class Product_tbl(models.Model):
+    name = models.CharField(max_length=20)
