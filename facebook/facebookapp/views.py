@@ -102,9 +102,9 @@ def addData(request):
 def viewProduct(request):
     Userdata = request.data
     name = Userdata['letter']
-    obj = Product_tbl.objects.filter(name_istartswith=name).exists()
+    obj = Product_tbl.objects.filter(name__istartswith=name).exists()
     if obj :
-        product_obj = Product_tbl.objects.filter(name_istartswith=name)
+        product_obj = Product_tbl.objects.filter(name__istartswith=name)
         data_list = []
         for obj in product_obj:
             data_list.append(obj.name)
