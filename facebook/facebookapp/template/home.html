@@ -6,23 +6,28 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
 
     <title>Profile</title>
 </head>
 
 <body>
     <nav class="row nav bg-color">
-        <div class="col-lg-3">
-            <img class="img-fluid rounded" src="{% static 'img/facebook.png'%}">
+        <div class="col-5">
+            <img class="img-fluid rounded mn-lg" src="{% static 'img/facebook.png'%}">
         </div>
-        <div>
-            <input type="text">
+        <div class="col-4 pt-5">
+            <form class="form-inline">
+                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+        <div class="col-3 pt-5">
+            <i class="fas fa-user "></i>
         </div>
     </nav>
     <div class="container">
