@@ -1,38 +1,39 @@
-body{
+body {
     margin: auto;
     padding: 0;
 }
-.clearfix{
+
+.clearfix {
     clear: both;
 }
-.bg-color{
+
+.bg-color {
     background-color: #0154a0;
 }
 
-.nav {
-    
+.nav_1 {
     height: 70px;
 }
 
-@media (min-width: 992px)  {
-.mn-lg {
-    width: auto;
-    height: 85%;
-    padding-left: 150px;  
-    }}
-
-@media (min-width:768px) and (max-width: 991px)  {
-.mn-lg {
-    width: auto;
-    height: 85%;
-    padding-left: 400px;
-    }}
-
-
-.sgn-in input{
-    height: 26px;
+@media (min-width: 992px) {
+    .mn-lg {
+        width: auto;
+        height: 85%;
+        padding-left: 150px;
+    }
 }
 
+@media (min-width:768px) and (max-width: 991px) {
+    .mn-lg {
+        width: auto;
+        height: 85%;
+        padding-left: 400px;
+    }
+}
+
+.sgn-in input {
+    height: 26px;
+}
 
 .mn-bd {
     background-color: #e9ecf3;
@@ -40,36 +41,40 @@ body{
     height: 80%;
 }
 
-
-
-.frm input{
+.frm input {
     border-radius: 8px;
-    
 }
-.in-wd{
+
+.in-wd {
     width: 369px;
 }
-.margin-top{
+
+.margin-top {
     margin-top: 10px;
 }
-.margin-bottom{
+
+.margin-bottom {
     margin-bottom: 10px;
 }
-.frm span{
+
+.frm span {
     width: 150px;
     color: blue;
     font-size: 12px;
 }
-.frm hr{
+
+.frm hr {
     height: 1px;
 }
 
 .message {
     margin-right: 10px;
 }
-.blue{
+
+.blue {
     color: blue;
 }
+
 .para {
     font-size: 10px;
 }
@@ -89,6 +94,3 @@ body{
     height: 30px;
     width: 100%;
 }
-
-
-
